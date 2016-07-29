@@ -1,0 +1,16 @@
+{
+  "name": "react-point",
+  "version": "0.0.1",
+  "description": "A click/tap detector for React",
+  "author": "Michael Jackson",
+  "license": "MIT",
+  "main": "modules/index.js",
+  "peerDependencies": {
+    "react": "15.x",
+    "react-dom": "15.x"
+  },
+  "devDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
+  }
+}
