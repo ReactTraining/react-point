@@ -21,12 +21,12 @@ class PointTarget extends React.Component {
     tolerance: 10
   }
 
-  handleClick() {
+  handleClick = () => {
     if (!this.usingTouch && this.props.onPoint)
       this.props.onPoint()
   }
   
-  handleTouchStart(event) {
+  handleTouchStart = (event) => {
     this.usingTouch = true
     
     if (this.touchStarted)
@@ -39,7 +39,7 @@ class PointTarget extends React.Component {
     this.startY = touchY(event)
   }
   
-  handleTouchMove(event) {
+  handleTouchMove = (event) => {
     if (!this.touchMoved) {
       const { tolerance } = this.props
 
@@ -48,12 +48,12 @@ class PointTarget extends React.Component {
     }
   }
   
-  handleTouchCancel() {
+  handleTouchCancel = () => {
     this.touchStarted = this.touchMoved = false
     this.startX = this.startY = 0
   }
   
-  handleTouchEnd() {
+  handleTouchEnd = () => {
     this.touchStarted = false
     
     if (!this.touchMoved && this.props.onPoint)
@@ -62,13 +62,6 @@ class PointTarget extends React.Component {
   
   componentWillMount() {
     this.usingTouch = false
-    
-    // I, for one, welcome our new manual binding overlords.
-    this.handleClick = this.handleClick.bind(this)
-    this.handleTouchStart = this.handleTouchStart.bind(this)
-    this.handleTouchMove = this.handleTouchMove.bind(this)
-    this.handleTouchCancel = this.handleTouchCancel.bind(this)
-    this.handleTouchEnd = this.handleTouchEnd.bind(this)
   }
   
   render() {
