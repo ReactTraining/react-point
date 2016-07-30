@@ -1,6 +1,6 @@
 # react-point
 
-[`react-point`](https://www.npmjs.com/package/react-point) is a very small and focused click/tap detector component for React.
+[`react-point`](https://www.npmjs.com/package/react-point) is a very small and focused click/tap component for React.
 
 A `<PointTarget>` component listens for clicks and click-like touches (not swipes or drags) and notifies you in its `onPoint` callback.
 
