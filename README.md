@@ -49,4 +49,27 @@ class App extends React.Component {
 }
 ```
 
-That's it :)
+By default, a `<Point>` renders a `<div>`. Use the `<Point component>` prop to make it render something else. All props are passed directly through to your component (besides `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel`, which `<Point>` needs to overwrite in order to do its thing).
+
+For example, to render a `<button>`:
+
+```js
+import React from 'react'
+import Point from 'react-point'
+
+class App extends React.Component {
+  handlePoint() {
+    alert('I was clicked or tapped!')
+  }
+
+  render() {
+    return (
+      <Point component="button" onPoint={this.handlePoint}/>
+    )
+  }
+}
+```
+
+You can also pass in custom component classes. That's it :)
+
+Enjoy!
