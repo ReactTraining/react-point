@@ -2,7 +2,7 @@
 
 [`react-point`](https://www.npmjs.com/package/react-point) is a very small and focused click/tap detector component for React.
 
-A `<Point>` component listens for clicks and click-like touches (not swipes or drags) and notifies you in its `onPoint` callback.
+A `<PointTarget>` component listens for clicks and click-like touches (not swipes or drags) and notifies you in its `onPoint` callback.
 
 ## Installation
 
@@ -14,10 +14,10 @@ Then with a module bundler like [webpack](https://webpack.github.io/), use as yo
 
 ```js
 // using an ES6 transpiler, like babel
-import Point from 'react-point'
+import { PointTarget } from 'react-point'
 
 // not using an ES6 transpiler
-var Point = require('react-point')
+var PointTarget = require('react-point').PointTarget
 ```
 
 The UMD build is also available on [npmcdn](https://npmcdn.com):
@@ -30,11 +30,11 @@ You can find the library on `window.ReactPoint`.
 
 ## Usage
 
-Just render a `<Point>` component and give it an `onPoint` function to call whenever the user clicks or taps it.
+Just render a `<PointTarget>` component and give it an `onPoint` function to call whenever the user clicks or taps it.
 
 ```js
 import React from 'react'
-import Point from 'react-point'
+import { PointTarget } from 'react-point'
 
 class App extends React.Component {
   handlePoint() {
@@ -43,19 +43,19 @@ class App extends React.Component {
 
   render() {
     return (
-      <Point onPoint={this.handlePoint}/>
+      <PointTarget onPoint={this.handlePoint}/>
     )
   }
 }
 ```
 
-By default, a `<Point>` renders a `<div>`. Use the `<Point component>` prop to make it render something else. All props are passed directly through to your component (besides `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel`, which `<Point>` needs to overwrite in order to do its thing).
+By default, a `<PointTarget>` renders a `<div>`. Use the `<PointTarget component>` prop to make it render something else. All props are passed directly through to your component (besides `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel`, which `<PointTarget>` needs to overwrite in order to do its thing).
 
 For example, to render a `<button>`:
 
 ```js
 import React from 'react'
-import Point from 'react-point'
+import { PointTarget } from 'react-point'
 
 class App extends React.Component {
   handlePoint() {
@@ -64,7 +64,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Point component="button" onPoint={this.handlePoint}/>
+      <PointTarget component="button" onPoint={this.handlePoint}/>
     )
   }
 }

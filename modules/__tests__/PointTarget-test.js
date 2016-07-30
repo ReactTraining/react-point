@@ -2,14 +2,14 @@ import expect from 'expect'
 import React from 'react'
 import { render } from 'react-dom'
 import { Simulate } from 'react-addons-test-utils'
-import Point from '../index'
+import PointTarget from '../PointTarget'
 
 const touch = (clientX, clientY) => ({
   clientX,
   clientY
 })
 
-describe('A <Point>', () => {
+describe('A <PointTarget>', () => {
   let node
   beforeEach(() => {
     node = document.createElement('div')
@@ -19,7 +19,7 @@ describe('A <Point>', () => {
     it('calls the onPoint callback', () => {
       let called = false
 
-      render(<Point onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={() => called = true}/>, node, () => {
         Simulate.click(node.firstChild)
 
         expect(called).toBe(true)
@@ -31,7 +31,7 @@ describe('A <Point>', () => {
     it('calls the onPoint callback', () => {
       let called = false
 
-      render(<Point onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={() => called = true}/>, node, () => {
         Simulate.touchStart(node.firstChild, { touches: [ touch(0, 0) ] })
         Simulate.touchEnd(node.firstChild, { touches: [ touch(0, 0) ] })
 
@@ -44,7 +44,7 @@ describe('A <Point>', () => {
     it('does not call the onPoint callback', () => {
       let called = false
 
-      render(<Point onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={() => called = true}/>, node, () => {
         Simulate.touchStart(node.firstChild, { touches: [ touch(0, 0) ] })
         Simulate.touchMove(node.firstChild, { touches: [ touch(0, 20) ] })
         Simulate.touchEnd(node.firstChild, { touches: [ touch(0, 0) ] })
@@ -58,7 +58,7 @@ describe('A <Point>', () => {
     it('does not call the onPoint callback', () => {
       let called = false
 
-      render(<Point onPoint={() => called = true}/>, node, () => {
+      render(<PointTarget onPoint={() => called = true}/>, node, () => {
         Simulate.touchStart(node.firstChild, { touches: [ touch(0, 0) ] })
         Simulate.touchCancel(node.firstChild)
 
