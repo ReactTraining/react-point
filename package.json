@@ -1,6 +1,6 @@
 {
   "name": "react-point",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A minimal click/tap component for React",
   "repository": "mjackson/react-point",
   "author": "Michael Jackson",
