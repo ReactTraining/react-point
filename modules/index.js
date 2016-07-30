@@ -8,7 +8,17 @@ const touchY = (event) =>
 
 class Point extends React.Component {
   static propTypes = {
+    component: PropTypes.oneOfType([
+      PropTypes.func,
+      PropTypes.string
+    ]).isRequired,
+    tolerance: PropTypes.number,
     onPoint: PropTypes.func
+  }
+
+  static defaultProps = {
+    component: 'div',
+    tolerance: 10
   }
 
   handleClick() {
@@ -30,9 +40,12 @@ class Point extends React.Component {
   }
   
   handleTouchMove(event) {
-    if (!this.touchMoved)
-      this.touchMoved = Math.abs(this.startX - touchX(event)) > 10 ||
-                        Math.abs(this.startY - touchY(event)) > 10
+    if (!this.touchMoved) {
+      const { tolerance } = this.props
+
+      this.touchMoved = Math.abs(this.startX - touchX(event)) > tolerance ||
+                        Math.abs(this.startY - touchY(event)) > tolerance
+    }
   }
   
   handleTouchCancel() {
