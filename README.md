@@ -1,4 +1,10 @@
-# react-point
+# react-point [![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
+
+[build-badge]: https://img.shields.io/travis/mjackson/react-point/master.svg?style=flat-square
+[build]: https://travis-ci.org/mjackson/react-point
+
+[npm-badge]: https://img.shields.io/npm/v/react-point.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/react-point
 
 [`react-point`](https://www.npmjs.com/package/react-point) is a small and focused click/tap component for React.
 
