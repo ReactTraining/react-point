@@ -66,7 +66,7 @@ class PointTarget extends React.Component {
   
   render() {
     const { component, ...props } = this.props
-    
+
     // Let React setup event handlers for us.
     // TODO: Warn if they try to pass these props in?
     props.onClick = this.handleClick
@@ -74,7 +74,11 @@ class PointTarget extends React.Component {
     props.onTouchMove = this.handleTouchMove
     props.onTouchCancel = this.handleTouchCancel
     props.onTouchEnd = this.handleTouchEnd
-    
+
+    // Avoid unknown props warning.
+    delete props.onPoint
+    delete props.tolerance
+
     return React.createElement(
       component,
       props
