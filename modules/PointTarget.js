@@ -8,16 +8,13 @@ const touchY = (event) =>
 
 class PointTarget extends React.Component {
   static propTypes = {
-    component: PropTypes.oneOfType([
-      PropTypes.func,
-      PropTypes.string
-    ]).isRequired,
+    children: PropTypes.node,
     tolerance: PropTypes.number,
     onPoint: PropTypes.func
   }
 
   static defaultProps = {
-    component: 'div',
+    children: React.createElement('button'),
     tolerance: 10
   }
 
@@ -65,24 +62,15 @@ class PointTarget extends React.Component {
   }
   
   render() {
-    const { component, ...props } = this.props
+    const element = React.Children.only(this.props.children)
 
-    // Let React setup event handlers for us.
-    // TODO: Warn if they try to pass these props in?
-    props.onClick = this.handleClick
-    props.onTouchStart = this.handleTouchStart
-    props.onTouchMove = this.handleTouchMove
-    props.onTouchCancel = this.handleTouchCancel
-    props.onTouchEnd = this.handleTouchEnd
-
-    // Avoid unknown props warning.
-    delete props.onPoint
-    delete props.tolerance
-
-    return React.createElement(
-      component,
-      props
-    )
+    return React.cloneElement(element, {
+      onClick: this.handleClick,
+      onTouchStart: this.handleTouchStart,
+      onTouchMove: this.handleTouchMove,
+      onTouchCancel: this.handleTouchCancel,
+      onTouchEnd: this.handleTouchEnd
+    })
   }
 }
 

@@ -55,9 +55,11 @@ class App extends React.Component {
 }
 ```
 
-By default, a `<PointTarget>` renders a `<div>`. Use the `<PointTarget component>` prop to make it render something else. All props are passed directly through to your component (besides `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel`, which `<PointTarget>` needs to overwrite in order to do its thing).
+By default, a `<PointTarget>` renders a `<button>`. Use the [children](https://facebook.github.io/react/tips/children-props-type.html) prop to make it render something else.
 
-For example, to render a `<button>`:
+*Note:* The `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel` props will be overwritten because `<PointTarget>` needs them to do its thing).
+
+For example, to render a `<div>`:
 
 ```js
 import React from 'react'
@@ -70,12 +72,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <PointTarget component="button" onPoint={this.handlePoint}/>
+      <PointTarget onPoint={this.handlePoint}>
+        <div>Point here</div>
+      </PointTarget>
     )
   }
 }
 ```
 
-You can also pass in custom component classes. That's it :)
-
-Enjoy!
+That's it :) Enjoy!

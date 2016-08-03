@@ -15,6 +15,22 @@ describe('A <PointTarget>', () => {
     node = document.createElement('div')
   })
 
+  describe('with no children', () => {
+    it('renders a button', () => {
+      render(<PointTarget/>, node, () => {
+        expect(node.firstChild.tagName).toEqual('BUTTON')
+      })
+    })
+  })
+
+  describe('with children', () => {
+    it('renders them', () => {
+      render(<PointTarget><div/></PointTarget>, node, () => {
+        expect(node.firstChild.tagName).toEqual('DIV')
+      })
+    })
+  })
+
   describe('when it is clicked', () => {
     it('calls the onPoint callback', () => {
       let called = false
