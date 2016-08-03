@@ -6,7 +6,7 @@
 [npm-badge]: https://img.shields.io/npm/v/react-point.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/react-point
 
-[`react-point`](https://www.npmjs.com/package/react-point) is a small and focused click/tap component for React.
+[`react-point`](https://www.npmjs.com/package/react-point) is a small, focused click/tap component for React.
 
 A `<PointTarget>` component listens for clicks and click-like touches (not swipes or drags) and notifies you in its `onPoint` callback.
 
