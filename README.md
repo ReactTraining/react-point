@@ -36,7 +36,7 @@ You can find the library on `window.ReactPoint`.
 
 ## Usage
 
-Just render a `<PointTarget>` component and give it an `onPoint` function to call whenever the user clicks or taps it.
+Just render a `<PointTarget>` component and give it an `onPoint` function to call whenever the user clicks or taps the element.
 
 ```js
 import React from 'react'
@@ -55,9 +55,7 @@ class App extends React.Component {
 }
 ```
 
-By default, a `<PointTarget>` renders a `<button>`. Use the [children](https://facebook.github.io/react/tips/children-props-type.html) prop to make it render something else.
-
-For example, to render a `<div>`:
+By default, a `<PointTarget>` renders a `<button>` for accessibility. However, you can use the [`children` prop](https://facebook.github.io/react/tips/children-props-type.html) to make it render something else. For example, to render a `<div>`:
 
 ```js
 import React from 'react'
@@ -71,7 +69,7 @@ class App extends React.Component {
   render() {
     return (
       <PointTarget onPoint={this.handlePoint}>
-        <div>Point here</div>
+        <div>Click or tap here</div>
       </PointTarget>
     )
   }
