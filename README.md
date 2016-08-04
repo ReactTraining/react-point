@@ -57,8 +57,6 @@ class App extends React.Component {
 
 By default, a `<PointTarget>` renders a `<button>`. Use the [children](https://facebook.github.io/react/tips/children-props-type.html) prop to make it render something else.
 
-*Note:* The `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel` props will be overwritten because `<PointTarget>` needs them to do its thing).
-
 For example, to render a `<div>`:
 
 ```js
@@ -79,5 +77,7 @@ class App extends React.Component {
   }
 }
 ```
+
+*Note:* The `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel` props will be overwritten because `<PointTarget>` needs them to do its thing).
 
 That's it :) Enjoy!
