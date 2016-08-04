@@ -14,7 +14,6 @@ class PointTarget extends React.Component {
   }
 
   static defaultProps = {
-    children: React.createElement('button'),
     tolerance: 10
   }
 
@@ -62,7 +61,9 @@ class PointTarget extends React.Component {
   }
   
   render() {
-    const element = React.Children.only(this.props.children)
+    const { children } = this.props
+
+    const element = children ? React.Children.only(children) : <button/>
 
     return React.cloneElement(element, {
       onClick: this.handleClick,
