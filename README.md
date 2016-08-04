@@ -20,10 +20,10 @@ Then with a module bundler like [webpack](https://webpack.github.io/), use as yo
 
 ```js
 // using an ES6 transpiler, like babel
-import { PointTarget } from 'react-point'
+import PointTarget from 'react-point'
 
 // not using an ES6 transpiler
-var PointTarget = require('react-point').PointTarget
+var PointTarget = require('react-point')
 ```
 
 The UMD build is also available on [npmcdn](https://npmcdn.com):
@@ -40,7 +40,7 @@ Just render a `<PointTarget>` component and give it an `onPoint` function to cal
 
 ```js
 import React from 'react'
-import { PointTarget } from 'react-point'
+import PointTarget from 'react-point'
 
 class App extends React.Component {
   handlePoint() {
@@ -59,7 +59,7 @@ By default, a `<PointTarget>` renders a `<button>` for accessibility. However, y
 
 ```js
 import React from 'react'
-import { PointTarget } from 'react-point'
+import PointTarget from 'react-point'
 
 class App extends React.Component {
   handlePoint() {
