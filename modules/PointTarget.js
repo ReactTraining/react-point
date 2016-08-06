@@ -10,7 +10,9 @@ class PointTarget extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     tolerance: PropTypes.number,
-    onPoint: PropTypes.func
+    onPoint: PropTypes.func,
+    mouseDown: PropTypes.func,
+    mouseUp: PropTypes.func
   }
 
   static defaultProps = {
@@ -21,20 +23,20 @@ class PointTarget extends React.Component {
     if (!this.usingTouch && this.props.onPoint)
       this.props.onPoint()
   }
-  
+
   handleTouchStart = (event) => {
     this.usingTouch = true
-    
+
     if (this.touchStarted)
       return
-    
+
     this.touchStarted = true
-    
+
     this.touchMoved = false
     this.startX = touchX(event)
     this.startY = touchY(event)
   }
-  
+
   handleTouchMove = (event) => {
     if (!this.touchMoved) {
       const { tolerance } = this.props
@@ -43,23 +45,35 @@ class PointTarget extends React.Component {
                         Math.abs(this.startY - touchY(event)) > tolerance
     }
   }
-  
+
   handleTouchCancel = () => {
     this.touchStarted = this.touchMoved = false
     this.startX = this.startY = 0
   }
-  
+
   handleTouchEnd = () => {
     this.touchStarted = false
-    
+
     if (!this.touchMoved && this.props.onPoint)
       this.props.onPoint()
   }
-  
+
+  handleMouseDown = () => {
+    if (this.props.mouseDown) {
+      this.props.mouseDown()
+    }
+  }
+
+  handleMouseUp = () => {
+    if (this.props.mouseUp) {
+      this.props.mouseUp()
+    }
+  }
+
   componentWillMount() {
     this.usingTouch = false
   }
-  
+
   render() {
     const { children } = this.props
 
@@ -70,7 +84,9 @@ class PointTarget extends React.Component {
       onTouchStart: this.handleTouchStart,
       onTouchMove: this.handleTouchMove,
       onTouchCancel: this.handleTouchCancel,
-      onTouchEnd: this.handleTouchEnd
+      onTouchEnd: this.handleTouchEnd,
+      onMouseDown: this.handleMouseDown,
+      onMouseUp: this.handleMouseUp
     })
   }
 }
