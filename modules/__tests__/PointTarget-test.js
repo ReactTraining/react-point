@@ -82,4 +82,17 @@ describe('A <PointTarget>', () => {
       })
     })
   })
+
+  describe('when a mouse up and down', () => {
+    it('does not call the onPoint callback', () => {
+      let called = false
+
+      render(<PointTarget onPoint={() => called = true}/>, node, () => {
+        Simulate.mouseDown(node.firstChild)
+        Simulate.mouseUp(node.firstChild)
+
+        expect(called).toBe(false)
+      })
+    })
+  })
 })
