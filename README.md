@@ -8,7 +8,7 @@
 
 [`react-point`](https://www.npmjs.com/package/react-point) is a small, focused click/tap component for React.
 
-A `<PointTarget>` normalizes click and click-like touch events (not swipes or drags) into a "point event".
+A `<PointTarget>` normalizes click and click-like touch events (not swipes or drags) into a "point event". This helps you avoid the 300ms delay for click events on touch interfaces like iOS.
 
 ## Installation
 
