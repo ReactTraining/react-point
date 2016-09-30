@@ -7,12 +7,6 @@ const touchY = (event) =>
   event.touches[0].clientY
 
 class PointTarget extends React.Component {
-  static propTypes = {
-    children: PropTypes.node,
-    tolerance: PropTypes.number,
-    onPoint: PropTypes.func
-  }
-
   static defaultProps = {
     tolerance: 10
   }
@@ -72,6 +66,14 @@ class PointTarget extends React.Component {
       onTouchCancel: this.handleTouchCancel,
       onTouchEnd: this.handleTouchEnd
     })
+  }
+}
+
+if (__DEV__) {
+  PointTarget.propTypes = {
+    children: PropTypes.node,
+    tolerance: PropTypes.number,
+    onPoint: PropTypes.func
   }
 }
 
