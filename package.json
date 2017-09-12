@@ -10,9 +10,9 @@
     "esm",
     "umd"
   ],
-  "main": "cjs/react-broadcast.js",
-  "module": "esm/react-broadcast.js",
-  "unpkg": "umd/react-broadcast.js",
+  "main": "cjs/react-point.js",
+  "module": "esm/react-point.js",
+  "unpkg": "umd/react-point.js",
   "scripts": {
     "build": "node ./scripts/build.js",
     "clean": "git clean -fdX .",
