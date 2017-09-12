@@ -1,6 +1,6 @@
 {
   "name": "react-point",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Fast touch events for React",
   "repository": "ReactTraining/react-point",
   "author": "Michael Jackson",
