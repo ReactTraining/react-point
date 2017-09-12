@@ -6,17 +6,17 @@
 [npm-badge]: https://img.shields.io/npm/v/react-point.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/react-point
 
-[`react-point`](https://www.npmjs.com/package/react-point) is a small, focused click/tap component for React.
+[`react-point`](https://www.npmjs.com/package/react-point) gives you fast touch events for your React applications.
 
-A `<PointTarget>` normalizes click and click-like touch events (not swipes or drags) into a "point event". This helps you avoid the 300ms delay for click events on touch interfaces like iOS.
+A `<PointTarget>` normalizes click and click-like touch events (not swipes or drags) into a "point" event. This helps you avoid the 300ms delay for click events on touch interfaces like iOS.
 
 ## Installation
 
-Using [npm](https://www.npmjs.com/):
+Using [yarn](https://yarnpkg.com/):
 
-    $ npm install --save react-point
+    $ yarn add react-point
 
-Then with a module bundler like [webpack](https://webpack.github.io/), use as you would anything else:
+Then, use as you would anything else:
 
 ```js
 // using ES6 modules
@@ -43,7 +43,7 @@ import React from 'react'
 import PointTarget from 'react-point'
 
 class App extends React.Component {
-  handlePoint() {
+  handlePoint = () => {
     alert('I was clicked or tapped!')
   }
 
@@ -55,14 +55,14 @@ class App extends React.Component {
 }
 ```
 
-By default, a `<PointTarget>` renders a `<button>` for accessibility. However, you can use the [`children` prop](https://facebook.github.io/react/tips/children-props-type.html) to make it render something else. For example, to render a `<div>`:
+By default, a `<PointTarget>` renders a `<button>` for accessibility. However, you can use the [`children` prop](https://facebook.github.io/react/docs/jsx-in-depth.html#children-in-jsx) to make it render something else. For example, to render a `<div>`:
 
 ```js
 import React from 'react'
 import PointTarget from 'react-point'
 
 class App extends React.Component {
-  handlePoint() {
+  handlePoint = () => {
     alert('I was clicked or tapped!')
   }
 
@@ -78,4 +78,9 @@ class App extends React.Component {
 
 *Note:* The `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel` props will be overwritten because `<PointTarget>` needs them to do its thing).
 
-That's it :) Enjoy!
+Enjoy!
+
+## About
+
+react-point is developed and maintained by [React Training](https://reacttraining.com). If you're interested in learning more about what React can do for your company, please [get in touch](mailto:hello@reacttraining.com)!
+"hat's it :) Enjoy!

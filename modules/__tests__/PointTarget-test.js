@@ -18,7 +18,7 @@ describe('A <PointTarget>', () => {
   describe('with no children', () => {
     it('renders a button', () => {
       render(<PointTarget/>, node, () => {
-        expect(node.firstChild.tagName).toEqual('BUTTON')
+        expect(node.firstChild.tagName.toLowerCase()).toEqual('button')
       })
     })
   })
@@ -26,7 +26,7 @@ describe('A <PointTarget>', () => {
   describe('with children', () => {
     it('renders them', () => {
       render(<PointTarget><div/></PointTarget>, node, () => {
-        expect(node.firstChild.tagName).toEqual('DIV')
+        expect(node.firstChild.tagName.toLowerCase()).toEqual('div')
       })
     })
   })
