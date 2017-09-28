@@ -78,9 +78,6 @@ class App extends React.Component {
 
 *Note:* The `onClick`, `onTouchStart`, `onTouchMove`, `onTouchEnd`, and `onTouchCancel` props will be overwritten because `<PointTarget>` needs them to do its thing).
 
-Enjoy!
-
 ## About
 
 react-point is developed and maintained by [React Training](https://reacttraining.com). If you're interested in learning more about what React can do for your company, please [get in touch](mailto:hello@reacttraining.com)!
-"hat's it :) Enjoy!
