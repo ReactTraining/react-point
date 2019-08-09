@@ -57,7 +57,7 @@ class PointTarget extends React.Component {
       this.props.onPoint()
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.usingTouch = false
   }
 
